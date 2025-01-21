@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zazacraft:sostenedor"
+    },
+    {
+      "item": "zazacraft:papelote"
+    },
+    {
+      "item": "zazacraft:zaza_polvo"
+    },
+    {
+      "item": "zazacraft:tobania_hoja"
+    }
+  ],
+  "result": {
+    "item": "zazacraft:palito_loco",
+    "count": 1
+  }
+}

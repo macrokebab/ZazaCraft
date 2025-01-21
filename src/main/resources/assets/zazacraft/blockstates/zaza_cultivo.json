@@ -1,0 +1,28 @@
+{
+    "variants": {
+        "age=0": {
+            "model": "zazacraft:block/zaza_stage_0"
+        },
+        "age=1": {
+            "model": "zazacraft:block/zaza_stage_1"
+        },
+        "age=2": {
+            "model": "zazacraft:block/zaza_stage_2"
+        },
+        "age=3": {
+            "model": "zazacraft:block/zaza_stage_3"
+        },
+        "age=4": {
+            "model": "zazacraft:block/zaza_stage_4"
+        },
+        "age=5": {
+            "model": "zazacraft:block/zaza_stage_5"
+        },
+        "age=6": {
+            "model": "zazacraft:block/zaza_stage_6"
+        },
+        "age=7": {
+            "model": "zazacraft:block/zaza_stage_7"
+        }
+    }
+}

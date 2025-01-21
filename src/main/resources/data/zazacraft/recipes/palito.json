@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zazacraft:zaza_dstr"
+    },
+    {
+      "item": "zazacraft:zaza_dstr"
+    },
+    {
+      "item": "zazacraft:papelote"
+    },
+    {
+      "item": "zazacraft:sostenedor"
+    }
+  ],
+  "result": {
+    "item": "zazacraft:palito",
+    "count": 1
+  }
+}

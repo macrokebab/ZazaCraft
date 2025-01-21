@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "jungle",
+  "features": "zazacraft:tobania_wild",
+  "step": "vegetal_decoration"
+}

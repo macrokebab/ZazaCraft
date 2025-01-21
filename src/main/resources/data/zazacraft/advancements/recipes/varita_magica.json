@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "has_elixir_zaza": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "zazacraft:elixir_zaza"
+          }
+        ]
+      }
+    },
+    "has_iron_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_nugget"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "zazacraft:varita_magica"
+    ]
+  }
+}
