@@ -21,6 +21,7 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> ZAZATAB = CREATIVE_MODE_TABS.register("zazatab",
             () -> CreativeModeTab.builder().title(Component.translatable("item_group.zazacraft.zazatab")).icon(() -> new ItemStack(ModItems.ZAZA_HOJA.get())).displayItems((parameters, tabData) -> {
+                tabData.accept(ModBlocks.BONG.get().asItem());
                 tabData.accept(ModItems.CANARIA.get());
                 tabData.accept(ModItems.COGOLLO.get());
                 tabData.accept(ModItems.ELIXIR_ZAZA.get());

@@ -27,7 +27,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> WILD_ZAZA = BLOCKS.register("zaza_wild", () -> new WildZaza());
 
-    public static void register(IEventBus eventBus) {
-        BLOCKS.register(eventBus);
-    }
+    public static final RegistryObject<Block> BONG = BLOCKS.register("bong", BongBlock::new);
+
 }

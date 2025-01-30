@@ -1,14 +1,15 @@
 {
+  "parent": "zazacraft:category",
   "display": {
     "background": "minecraft:textures/block/stone.png",
     "icon": {
-      "item": "zazacraft:varita_magica"
+      "item": "zazacraft:bong"
     },
     "title": {
-      "translate": "advancements.logrovarita.title"
+      "translate": "advancements.craftbong.title"
     },
     "description": {
-      "translate": "advancements.logrovarita.descr"
+      "translate": "advancements.craftbong.descr"
     },
     "frame": "goal",
     "show_toast": true,
@@ -16,13 +17,13 @@
     "hidden": false
   },
   "criteria": {
-    "logrovarita_0": {
+    "craftbong_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "zazacraft:varita_magica"
+              "zazacraft:bong"
             ],
             "count": {
               "min": 1,

@@ -1,0 +1,19 @@
+{
+  "criteria": {
+    "has_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:glass_pane"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "zazacraft:bong"
+    ]
+  }
+}

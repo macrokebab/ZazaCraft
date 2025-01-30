@@ -62,13 +62,7 @@ public class ModItems {
     public static final RegistryObject<Item> ZAZA_SEMILLAS = ITEMS.register("zaza_semillas",
             () -> new BlockItem(ModBlocks.ZAZA_CULTIVO.get(), new Item.Properties()));
 
-    private static RegistryObject<Item> block(RegistryObject<Block> block) {
-        return ITEMS.register(block.getId().getPath(),
-                () -> new BlockItem(block.get(),
-                        new Item.Properties()));
-    }
+    public static final RegistryObject<Item> BONG = ITEMS.register("bong",
+            () -> new BlockItem(ModBlocks.BONG.get(), new Item.Properties().stacksTo(1)));
 
-    private static RegistryObject<Item> doubleBlock(RegistryObject<Block> block) {
-        return ITEMS.register(block.getId().getPath(), () -> new DoubleHighBlockItem(block.get(), new Item.Properties()));
-    }
 }

@@ -1,14 +1,10 @@
 package com.macrokebab.zazacraft;
 
-import com.macrokebab.zazacraft.init.ModMenus;
-import com.macrokebab.zazacraft.init.ModMobEffects;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,16 +17,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
+import static com.macrokebab.zazacraft.init.ModBlockEntities.BLOCK_ENTITY_TYPES;
 import static com.macrokebab.zazacraft.init.ModBlocks.BLOCKS;
 import static com.macrokebab.zazacraft.init.ModItems.ITEMS;
 import static com.macrokebab.zazacraft.init.ModCreativeModeTabs.CREATIVE_MODE_TABS;
-import static com.macrokebab.zazacraft.init.ModItems.*;
 import static com.macrokebab.zazacraft.init.ModMenus.MENU_TYPES;
 import static com.macrokebab.zazacraft.init.ModMobEffects.MOB_EFFECTS;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ZazacraftMod.MODID)
 public class ZazacraftMod {
+
 
     // Define mod id in a common place for everything to reference
     public static final String MODID = "zazacraft";
@@ -54,12 +51,18 @@ public class ZazacraftMod {
 
         MENU_TYPES.register(modEventBus);
 
+        BLOCK_ENTITY_TYPES.register(modEventBus);
+
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        MinecraftForge.EVENT_BUS.register(com.macrokebab.zazacraft.client.ClientModEvents.class);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
