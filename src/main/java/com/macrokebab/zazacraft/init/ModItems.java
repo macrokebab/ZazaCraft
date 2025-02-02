@@ -65,4 +65,10 @@ public class ModItems {
     public static final RegistryObject<Item> BONG = ITEMS.register("bong",
             () -> new BlockItem(ModBlocks.BONG.get(), new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> DESTRUCTOR = ITEMS.register("destructor",
+            () -> new BlockItem(ModBlocks.DESTRUCTOR.get(), new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> BANDEJA = ITEMS.register("bandeja",
+            () -> new BlockItem(ModBlocks.BANDEJA.get(), new Item.Properties().stacksTo(1)));
+
 }

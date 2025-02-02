@@ -29,4 +29,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BONG = BLOCKS.register("bong", BongBlock::new);
 
+    public static final RegistryObject<Block> DESTRUCTOR = BLOCKS.register("destructor", () -> new DestructorBlock());
+
+    public static final RegistryObject<Block> BANDEJA = BLOCKS.register("bandeja", BandejaBlock::new);
+
 }

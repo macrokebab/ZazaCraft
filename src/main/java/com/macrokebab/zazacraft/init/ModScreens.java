@@ -1,6 +1,6 @@
 package com.macrokebab.zazacraft.init;
 
-import com.macrokebab.zazacraft.client.gui.RinoneraguiScreen;
+import com.macrokebab.zazacraft.client.gui.*;
 
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -11,10 +11,12 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModScreens {
+
     @SubscribeEvent
     public static void clientLoad(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(ModMenus.RINONERAGUI.get(), RinoneraguiScreen::new);
+            MenuScreens.register(ModMenus.DESTRUCTOR_GUI.get(), DestructorguiScreen::new);
         });
     }
 }

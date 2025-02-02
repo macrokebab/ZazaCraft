@@ -37,6 +37,8 @@ public class ModCreativeModeTabs {
                 tabData.accept(ModItems.ZAZA_DSTR.get());
                 tabData.accept(ModItems.ZAZA_HOJA.get());
                 tabData.accept(ModItems.ZAZA_POLVO.get());
+                tabData.accept(ModBlocks.DESTRUCTOR.get().asItem());
+                tabData.accept(ModBlocks.BANDEJA.get().asItem());
             }).build());
 
 }

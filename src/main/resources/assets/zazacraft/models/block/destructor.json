@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "d3": "zazacraft:block/destructor_3",
+    "d4": "zazacraft:block/destructor_4"
+  },
+  "elements": [
+    {
+      "from": [6, 0, 6],
+      "to": [10, 4, 10],
+      "faces": {
+        "north": { "texture": "#d4" },
+        "south": { "texture": "#d4" },
+        "east": { "texture": "#d4" },
+        "west": { "texture": "#d4" },
+        "up": { "texture": "#d3" },
+        "down": { "texture": "#d3" }
+      }
+    }
+  ]
+}

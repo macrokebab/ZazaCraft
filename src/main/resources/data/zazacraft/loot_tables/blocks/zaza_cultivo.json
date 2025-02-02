@@ -113,61 +113,87 @@
         }
       ]
     },
+
     {
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:group",
-          "children": [
+          "type": "minecraft:item",
+          "name": "zazacraft:zaza_semillas",
+          "weight": 1,
+          "functions": [
             {
-              "type": "minecraft:item",
-              "name": "zazacraft:zaza_semillas",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 2
-                }
-              ]
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 2
+              }
             },
             {
-              "type": "minecraft:item",
-              "name": "zazacraft:zaza_hoja",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 4,
-                    "max": 6
-                  }
-                },
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:uniform_bonus_count",
-                  "parameters": { "bonusMultiplier": 1 }
-                }
-              ]
+              "function": "minecraft:explosion_decay"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "zazacraft:zaza_cultivo",
+          "properties": { "age": "7" }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "zazacraft:cogollo",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
             },
             {
-              "type": "minecraft:item",
-              "name": "zazacraft:cogollo",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 1,
-                    "max": 2
-                  }
-                },
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:uniform_bonus_count",
-                  "parameters": { "bonusMultiplier": 1 }
-                }
-              ]
+              "function": "minecraft:explosion_decay"
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "zazacraft:zaza_cultivo",
+          "properties": { "age": "7" }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "zazacraft:zaza_hoja",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            },
+            {
+              "function": "minecraft:explosion_decay"
             }
           ]
         }

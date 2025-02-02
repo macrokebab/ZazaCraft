@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_nugget"
+    },
+    "b": {
+      "item": "zazacraft:zaza_hoja"
+    }
+  },
+  "result": {
+    "item": "zazacraft:bandeja",
+    "count": 1
+  }
+}
