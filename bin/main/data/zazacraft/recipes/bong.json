@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "I I",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "zazacraft:bong"
+  }
+}

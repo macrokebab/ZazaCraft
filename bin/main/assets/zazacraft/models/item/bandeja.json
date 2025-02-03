@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "zazacraft:item/bandeja"
+  },
+  "render_type": "translucent"
+}

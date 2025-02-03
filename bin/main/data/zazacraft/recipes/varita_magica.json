@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    " I ",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "E": {
+      "item": "zazacraft:elixir_zaza"
+    }
+  },
+  "result": {
+    "item": "zazacraft:varita_magica"
+  }
+}

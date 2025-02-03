@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "zazacraft:zaza_hoja"
+    },
+    "title": {
+      "translate": "advancements.zazacraft.category.title"
+    },
+    "description": {
+      "translate": "advancements.zazacraft.category.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
