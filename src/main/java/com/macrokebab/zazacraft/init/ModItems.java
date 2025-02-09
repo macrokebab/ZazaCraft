@@ -2,9 +2,7 @@ package com.macrokebab.zazacraft.init;
 
 import com.macrokebab.zazacraft.item.*;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,11 +24,11 @@ public class ModItems {
     public static final RegistryObject<Item> ELIXIR_ZAZA = ITEMS.register("elixir_zaza",
             () -> new Item(new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> PALITO = ITEMS.register("palito",
-            () -> new PalitoItem(new Item.Properties()));
+    public static final RegistryObject<Item> VERDE = ITEMS.register("verde",
+            () -> new VerdeItem(new Item.Properties()));
 
-    public static final RegistryObject<Item> PALITO_LOCO = ITEMS.register("palito_loco",
-            () -> new PalitoLocoItem(new Item.Properties()));
+    public static final RegistryObject<Item> PORRO = ITEMS.register("porro",
+            () -> new PorroItem(new Item.Properties()));
 
     public static final RegistryObject<Item> PAPELOTE = ITEMS.register("papelote",
             () -> new Item(new Item.Properties()));
@@ -57,6 +55,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ZAZA_POLVO = ITEMS.register("zaza_polvo",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ZAZA_ROCA = ITEMS.register("zaza_roca",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ZAZA_SEMILLAS = ITEMS.register("zaza_semillas",

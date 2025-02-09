@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zazacraft:zaza_polvo"
+    },
+    {
+      "item": "zazacraft:zaza_polvo"
+    },
+    {
+      "item": "zazacraft:zaza_polvo"
+    },
+    {
+      "item": "zazacraft:zaza_polvo"
+    }
+  ],
+  "result": {
+    "item": "zazacraft:zaza_roca",
+    "count": 1
+  }
+}

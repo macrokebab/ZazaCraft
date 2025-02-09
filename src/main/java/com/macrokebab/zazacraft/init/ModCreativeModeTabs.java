@@ -25,8 +25,8 @@ public class ModCreativeModeTabs {
                 tabData.accept(ModItems.CANARIA.get());
                 tabData.accept(ModItems.COGOLLO.get());
                 tabData.accept(ModItems.ELIXIR_ZAZA.get());
-                tabData.accept(ModItems.PALITO.get());
-                tabData.accept(ModItems.PALITO_LOCO.get());
+                tabData.accept(ModItems.VERDE.get());
+                tabData.accept(ModItems.PORRO.get());
                 tabData.accept(ModItems.PAPELOTE.get());
                 tabData.accept(ModItems.RINONERA.get());
                 tabData.accept(ModItems.SOSTENEDOR.get());
@@ -37,6 +37,7 @@ public class ModCreativeModeTabs {
                 tabData.accept(ModItems.ZAZA_DSTR.get());
                 tabData.accept(ModItems.ZAZA_HOJA.get());
                 tabData.accept(ModItems.ZAZA_POLVO.get());
+                tabData.accept(ModItems.ZAZA_ROCA.get());
                 tabData.accept(ModBlocks.DESTRUCTOR.get().asItem());
                 tabData.accept(ModBlocks.BANDEJA.get().asItem());
             }).build());

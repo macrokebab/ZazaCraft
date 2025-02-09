@@ -6,8 +6,8 @@
   },
   "elements": [
     {
-      "from": [2, 0, 4],
-      "to": [14, 2, 12],
+      "from": [4, 0, 2],
+      "to": [12, 2, 14],
       "faces": {
         "north": { "texture": "#all" },
         "south": { "texture": "#all" },
@@ -17,6 +17,5 @@
         "down": { "texture": "#all" }
       }
     }
-  ],
-  "render_type": "solid"
+  ]
 }

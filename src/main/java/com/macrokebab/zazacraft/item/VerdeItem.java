@@ -10,11 +10,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class PalitoItem extends Item {
+public class VerdeItem extends Item {
 
     private static final int COOLDOWN = 60 * 20; // 30 segundos en ticks
 
-    public PalitoItem(Properties properties) {
+    public VerdeItem(Properties properties) {
         super(properties.stacksTo(4)); // Permitir grupos de 4
     }
 

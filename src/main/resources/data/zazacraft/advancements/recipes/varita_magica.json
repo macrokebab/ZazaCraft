@@ -23,7 +23,8 @@
   },
   "rewards": {
     "recipes": [
-      "zazacraft:varita_magica"
+      "zazacraft:varita_magica",
+      "zazacraft:zaza_roca"
     ]
   }
 }

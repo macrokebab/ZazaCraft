@@ -28,6 +28,6 @@ public class BandejaBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return box(2, 0, 4, 14, 2, 12);
+        return box(4, 0, 2, 12, 2, 14);
     }
 }

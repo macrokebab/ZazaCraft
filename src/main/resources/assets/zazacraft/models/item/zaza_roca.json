@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "zazacraft:item/palito_loco"
+    "layer0": "zazacraft:item/zaza_roca"
   }
 }
