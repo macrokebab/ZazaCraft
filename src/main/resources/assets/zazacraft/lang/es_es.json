@@ -34,5 +34,8 @@
   "advancements.zazacraft.category.title": "ZazaCraft",
   "advancements.zazacraft.category.description": "No es suerte sino práctica",
   "block.zazacraft.zaza_wild": "Zaza silvestre",
-  "entity.minecraft.villager.zazacraft.magovillager": "Mago"
+  "entity.minecraft.villager.zazacraft.magovillager": "Mago",
+  "gui.zazacraft.destructor_gui.button_destruir": "Destruir",
+  "advancements.fished_destructor.title": "Ufff referencia",
+  "advancements.fished_destructor.descr": "wazaaa"
 }

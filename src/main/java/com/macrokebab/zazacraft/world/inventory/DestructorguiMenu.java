@@ -23,10 +23,8 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-import com.macrokebab.zazacraft.network.DestructorguiSlotMessage;
 import com.macrokebab.zazacraft.init.ModMenus;
 import com.macrokebab.zazacraft.init.ModItems;
-import com.macrokebab.zazacraft.ZazacraftMod;
 
 public class DestructorguiMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
     public final static HashMap<String, Object> guistate = new HashMap<>();
@@ -88,12 +86,6 @@ public class DestructorguiMenu extends AbstractContainerMenu implements Supplier
             @Override
             public boolean mayPickup(Player entity) {
                 return false;
-            }
-
-            @Override
-            public void setChanged() {
-                super.setChanged();
-                slotChanged(0, 0, 0);
             }
 
             @Override
@@ -260,13 +252,6 @@ public class DestructorguiMenu extends AbstractContainerMenu implements Supplier
                     playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
                 }
             }
-        }
-    }
-
-    private void slotChanged(int slotid, int ctype, int meta) {
-        if (this.world != null && this.world.isClientSide()) {
-            ZazacraftMod.PACKET_HANDLER.sendToServer(new DestructorguiSlotMessage(slotid, x, y, z, ctype, meta));
-            DestructorguiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
         }
     }
 

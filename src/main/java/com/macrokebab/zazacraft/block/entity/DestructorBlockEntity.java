@@ -31,29 +31,81 @@ import com.macrokebab.zazacraft.world.inventory.DestructorguiMenu;
 import com.macrokebab.zazacraft.init.ModBlockEntities;
 
 public class DestructorBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+    private int giros = 0; // Contador de giros
+
+    // Métodos para el contador giros
+    public int getGiros() {
+        return this.giros;
+    }
+
+    public void setGiros(int value) {
+        this.giros = value;
+        this.setChanged(); // Guarda cambios
+    }
+
+
     private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
     private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
+    // Variables para controlar el estado
+    private boolean isRedstonePowered = false;
+    private ProcessMode currentMode = ProcessMode.MODE_1; // Enum para los modos
+
+    // Enum para definir los modos de proceso
+    public enum ProcessMode {
+        MODE_1, // Proceso sin redstone
+        MODE_2  // Proceso con redstone
+    }
+
+    // Constructor
     public DestructorBlockEntity(BlockPos position, BlockState state) {
         super(ModBlockEntities.DESTRUCTOR.get(), position, state);
     }
 
-    @Override
-    public void load(CompoundTag compound) {
-        super.load(compound);
-        if (!this.tryLoadLootTable(compound))
-            this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(compound, this.stacks);
+    // Método para actualizar el estado de redstone
+    public void setRedstonePowered(boolean powered) {
+        this.isRedstonePowered = powered;
+        this.currentMode = powered ? ProcessMode.MODE_2 : ProcessMode.MODE_1;
+        this.setChanged(); // Marca la entidad como modificada para guardar cambios
     }
 
+    // Getter para el estado de redstone (ahora público)
+    public boolean isRedstonePowered() {
+        return isRedstonePowered;
+    }
+
+    // Getter para el modo actual
+    public ProcessMode getCurrentMode() {
+        return currentMode;
+    }
+
+    // Método para guardar datos persistentes
+    // Guardar y cargar el contador
     @Override
-    public void saveAdditional(CompoundTag compound) {
-        super.saveAdditional(compound);
-        if (!this.trySaveLootTable(compound)) {
+    protected void saveAdditional(CompoundTag compound) {
+        super.saveAdditional(compound); // Guardar datos básicos
+        compound.putBoolean("RedstonePowered", isRedstonePowered); // Guardar estado de redstone
+        compound.putString("CurrentMode", currentMode.name()); // Guardar modo actual
+        compound.putInt("Giros", this.giros);
+        if (!this.trySaveLootTable(compound)) { // Guardar el inventario si no hay tabla de botín
             ContainerHelper.saveAllItems(compound, this.stacks);
         }
     }
 
+    // Método para cargar datos persistentes
+    @Override
+    public void load(CompoundTag compound) {
+        super.load(compound);
+        this.giros = compound.getInt("Giros");
+        this.isRedstonePowered = compound.getBoolean("RedstonePowered"); // Cargar estado de redstone
+        this.currentMode = ProcessMode.valueOf(compound.getString("CurrentMode")); // Cargar modo actual
+        if (!this.tryLoadLootTable(compound)) { // Cargar el inventario si no hay tabla de botín
+            this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+            ContainerHelper.loadAllItems(compound, this.stacks);
+        }
+    }
+
+    // Método para sincronizar datos con el cliente
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
@@ -64,6 +116,7 @@ public class DestructorBlockEntity extends RandomizableContainerBlockEntity impl
         return this.saveWithFullMetadata();
     }
 
+    // Métodos de contenedor
     @Override
     public int getContainerSize() {
         return stacks.size();
@@ -71,9 +124,11 @@ public class DestructorBlockEntity extends RandomizableContainerBlockEntity impl
 
     @Override
     public boolean isEmpty() {
-        for (ItemStack itemstack : this.stacks)
-            if (!itemstack.isEmpty())
+        for (ItemStack itemstack : this.stacks) {
+            if (!itemstack.isEmpty()) {
                 return false;
+            }
+        }
         return true;
     }
 
@@ -127,17 +182,21 @@ public class DestructorBlockEntity extends RandomizableContainerBlockEntity impl
         return true;
     }
 
+    // Método para manejar capacidades (como el manejo de ítems)
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
-        if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER)
+        if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER) {
             return handlers[facing.ordinal()].cast();
+        }
         return super.getCapability(capability, facing);
     }
 
+    // Método para invalidar capacidades cuando la entidad se elimina
     @Override
     public void setRemoved() {
         super.setRemoved();
-        for (LazyOptional<? extends IItemHandler> handler : handlers)
+        for (LazyOptional<? extends IItemHandler> handler : handlers) {
             handler.invalidate();
+        }
     }
 }

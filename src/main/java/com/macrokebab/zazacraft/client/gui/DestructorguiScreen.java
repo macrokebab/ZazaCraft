@@ -6,6 +6,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
@@ -13,12 +14,15 @@ import java.util.HashMap;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import com.macrokebab.zazacraft.world.inventory.DestructorguiMenu;
+import com.macrokebab.zazacraft.network.DestructorguiButtonMessage;
+import com.macrokebab.zazacraft.ZazacraftMod;
 
 public class DestructorguiScreen extends AbstractContainerScreen<DestructorguiMenu> {
     private final static HashMap<String, Object> guistate = DestructorguiMenu.guistate;
     private final Level world;
     private final int x, y, z;
     private final Player entity;
+    Button button_destruir;
 
     public DestructorguiScreen(DestructorguiMenu container, Inventory inventory, Component text) {
         super(container, inventory, text);
@@ -69,11 +73,18 @@ public class DestructorguiScreen extends AbstractContainerScreen<DestructorguiMe
 
     @Override
     protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        guiGraphics.drawString(this.font, Component.translatable("gui.zazacraft.destructor_gui.label_10s"), 78, 34, -12829636, false);
     }
 
     @Override
     public void init() {
         super.init();
+        button_destruir = Button.builder(Component.translatable("gui.zazacraft.destructor_gui.button_destruir"), e -> {
+            if (true) {
+                ZazacraftMod.PACKET_HANDLER.sendToServer(new DestructorguiButtonMessage(0, x, y, z));
+                DestructorguiButtonMessage.handleButtonAction(entity, 0, x, y, z);
+            }
+        }).bounds(this.leftPos + 51, this.topPos + 34, 67, 20).build();
+        guistate.put("button:button_destruir", button_destruir);
+        this.addRenderableWidget(button_destruir);
     }
 }

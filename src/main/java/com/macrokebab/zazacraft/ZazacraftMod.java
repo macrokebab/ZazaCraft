@@ -3,9 +3,12 @@ package com.macrokebab.zazacraft;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,16 +28,13 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.event.TickEvent;
 
+import java.util.*;
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.List;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.AbstractMap;
 
-
+import com.macrokebab.zazacraft.init.ModItems;
 import static com.macrokebab.zazacraft.init.ModBlockEntities.BLOCK_ENTITY_TYPES;
 import static com.macrokebab.zazacraft.init.ModBlocks.BLOCKS;
 import static com.macrokebab.zazacraft.init.ModItems.ITEMS;
@@ -148,6 +148,26 @@ public class ZazacraftMod {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+    }
+
+    @Mod.EventBusSubscriber
+    public class FishingEventHandler {
+        @SubscribeEvent
+        public static void onItemFished(ItemFishedEvent event) {
+            Random random = new Random();
+
+            // Probabilidad del 1% de reemplazar el ítem pescado
+            if (random.nextFloat() < 0.5) {
+                // Crear el nuevo ítem
+                ItemStack zazaItem = new ItemStack(ModItems.DESTRUCTOR.get());
+
+                // Limpiar el botín original
+                event.getDrops().clear();
+
+                // Añadir el ítem personalizado al botín
+                event.getDrops().add(zazaItem); // Añadir directamente el ItemStack
+            }
         }
     }
 }

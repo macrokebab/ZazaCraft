@@ -1,8 +1,12 @@
-
+// Define el paquete donde se encuentra esta clase
 package com.macrokebab.zazacraft.block;
 
+// Importaciones necesarias para el funcionamiento del bloque
+import com.macrokebab.zazacraft.procedures.DestructorAlJugadorDestruirElBloqueProcedure;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.network.NetworkHooks;
-
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -28,45 +32,67 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
-
 import io.netty.buffer.Unpooled;
-
 import com.macrokebab.zazacraft.world.inventory.DestructorguiMenu;
 import com.macrokebab.zazacraft.block.entity.DestructorBlockEntity;
 
+// Clase que define un bloque personalizado llamado "DestructorBlock"
+// Implementa la interfaz EntityBlock para permitir que el bloque tenga una entidad asociada
 public class DestructorBlock extends Block implements EntityBlock {
+
+    // Constructor del bloque
     public DestructorBlock() {
-        super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0f, 10f).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+        // Llama al constructor de la clase padre (Block) con propiedades personalizadas
+        super(BlockBehaviour.Properties.of()
+                .sound(SoundType.METAL) // Define el sonido del bloque (sonido de metal)
+                .strength(0f, 10f) // Define la resistencia del bloque (0 de dureza, 10 de resistencia a explosiones)
+                .noCollission() // El bloque no tiene colisión (los jugadores pueden atravesarlo)
+                .noOcclusion() // El bloque no ocluye la luz (no bloquea la luz)
+                .isRedstoneConductor((bs, br, bp) -> false) // El bloque no conduce la redstone
+        );
     }
 
+    @Override
+    public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
+        boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
+        DestructorAlJugadorDestruirElBloqueProcedure.execute(entity);
+        return retval;
+    }
+
+    // Método que define el color que el bloque aporta a un faro (beacon)
     @Override
     public float[] getBeaconColorMultiplier(BlockState state, LevelReader world, BlockPos pos, BlockPos beaconPos) {
-        return new float[]{0.2f, 0.2f, 0f};
+        return new float[]{0.2f, 0.2f, 0f}; // Devuelve un color amarillo oscuro
     }
 
+    // Método que define si la luz del cielo pasa a través del bloque
     @Override
     public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-        return true;
+        return true; // La luz del cielo pasa a través del bloque
     }
 
+    // Método que define cuánta luz bloquea el bloque
     @Override
     public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-        return 0;
+        return 0; // No bloquea la luz
     }
 
+    // Método que define la forma visual del bloque (usado para renderizado)
     @Override
     public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.empty();
+        return Shapes.empty(); // No tiene forma visual (es invisible)
     }
 
+    // Método que define la forma de colisión del bloque (usado para físicas y colisiones)
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return box(6, 0, 6, 10, 4, 10);
+        return box(6, 0, 6, 10, 4, 10); // Define una caja de colisión pequeña en el centro del bloque
     }
 
+    // Método que define el tipo de ruta que los mobs pueden usar para moverse alrededor del bloque
     @Override
     public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, Mob entity) {
-        return BlockPathTypes.WALKABLE;
+        return BlockPathTypes.WALKABLE; // Los mobs pueden caminar sobre este bloque
     }
 
     @Override
@@ -119,4 +145,5 @@ public class DestructorBlock extends Block implements EntityBlock {
         else
             return 0;
     }
+
 }
