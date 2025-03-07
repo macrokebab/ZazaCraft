@@ -11,9 +11,9 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraft.world.inventory.MenuType;
 
 public class ModMenus {
-    public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, ZazacraftMod.MODID);
-    public static final RegistryObject<MenuType<RinoneraguiMenu>> RINONERAGUI = MENU_TYPES.register("rinoneragui", () -> IForgeMenuType.create(RinoneraguiMenu::new));
-    public static final RegistryObject<MenuType<DestructorguiMenu>> DESTRUCTOR_GUI = MENU_TYPES.register("destructor_gui", () -> IForgeMenuType.create(DestructorguiMenu::new));
+    public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, ZazacraftMod.MODID);
+    public static final RegistryObject<MenuType<RinoneraguiMenu>> RINONERAGUI = REGISTRY.register("rinoneragui", () -> IForgeMenuType.create(RinoneraguiMenu::new));
+    public static final RegistryObject<MenuType<DestructorguiMenu>> DESTRUCTOR_GUI = REGISTRY.register("destructor_gui", () -> IForgeMenuType.create(DestructorguiMenu::new));
 
 
 }

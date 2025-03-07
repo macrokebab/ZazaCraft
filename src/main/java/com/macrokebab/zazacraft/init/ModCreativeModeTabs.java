@@ -6,7 +6,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.network.chat.Component;
 
 
@@ -17,9 +20,9 @@ import static com.macrokebab.zazacraft.ZazacraftMod.MODID;
 public class ModCreativeModeTabs {
 
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "zazacraft" namespace
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+    public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final RegistryObject<CreativeModeTab> ZAZATAB = CREATIVE_MODE_TABS.register("zazatab",
+    public static final RegistryObject<CreativeModeTab> ZAZATAB = REGISTRY.register("zazatab",
             () -> CreativeModeTab.builder().title(Component.translatable("item_group.zazacraft.zazatab")).icon(() -> new ItemStack(ModItems.ZAZA_HOJA.get())).displayItems((parameters, tabData) -> {
                 tabData.accept(ModBlocks.BONG.get().asItem());
                 tabData.accept(ModItems.CANARIA.get());
@@ -40,6 +43,10 @@ public class ModCreativeModeTabs {
                 tabData.accept(ModItems.ZAZA_ROCA.get());
                 tabData.accept(ModBlocks.DESTRUCTOR.get().asItem());
                 tabData.accept(ModBlocks.BANDEJA.get().asItem());
-            }).build());
+                tabData.accept(ModItems.POLI_SPAWN_EGG.get());
+                tabData.accept(ModItems.ZAZATRIGO.get());
+                tabData.accept(ModItems.ZAZATOBANIA.get());
+                tabData.accept(ModBlocks.DESTRUCTOR_MAGICO.get().asItem());
 
+            }).build());
 }

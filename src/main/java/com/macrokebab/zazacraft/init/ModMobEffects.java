@@ -8,7 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModMobEffects {
-    public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, ZazacraftMod.MODID);
+    public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, ZazacraftMod.MODID);
 
-    public static final RegistryObject<MobEffect> ZAZAEFECTO = MOB_EFFECTS.register("zazaefecto", ZazaEfecto::new);
+    public static final RegistryObject<MobEffect> ZAZAEFECTO = REGISTRY.register("zazaefecto", ZazaEfecto::new);
 }

@@ -1,4 +1,4 @@
-package com.macrokebab.zazacraft.block;
+package com.macrokebab.zazacraft.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

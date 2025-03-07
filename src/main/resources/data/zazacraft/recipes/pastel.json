@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "EWE",
+    "TTT"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "W": {
+      "item": "minecraft:milk_bucket"
+    },
+    "T": {
+      "item": "zazacraft:zazatrigo"
+    }
+  },
+  "result": {
+    "item": "zazacraft:pastel",
+    "count": 1
+  }
+}

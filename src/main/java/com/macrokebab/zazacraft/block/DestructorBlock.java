@@ -3,8 +3,6 @@ package com.macrokebab.zazacraft.block;
 
 // Importaciones necesarias para el funcionamiento del bloque
 import com.macrokebab.zazacraft.procedures.DestructorAlJugadorDestruirElBloqueProcedure;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.phys.shapes.VoxelShape;

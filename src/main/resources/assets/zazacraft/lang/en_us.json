@@ -6,6 +6,7 @@
   "gui.zazacraft.destructor_gui.label_10s": "5s",
   "block.zazacraft.bandeja": "Plate",
   "block.zazacraft.destructor": "Destroyer",
+  "block.zazacraft.destructor_magico": "Magic destroyer",
   "block.zazacraft.bong": "Bong",
   "advancements.craftbong.title": "High caliber",
   "advancements.craftbong.descr": "Improve your instruments",
@@ -37,5 +38,8 @@
   "entity.minecraft.villager.zazacraft.magovillager": "Wizard",
   "gui.zazacraft.destructor_gui.button_destruir": "Destroy",
   "advancements.fished_destructor.title": "omg reference",
-  "advancements.fished_destructor.descr": "wazaaa"
+  "advancements.fished_destructor.descr": "wazaaa",
+  "item.zazacraft.pastel": "Magic Brownie",
+  "item.zazacraft.zaza_trigo": "Magic wheat",
+  "item.zazacraft.poli_spwn_egg": "Poli Spawn Egg"
 }

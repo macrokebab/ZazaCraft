@@ -1,32 +1,32 @@
 package com.macrokebab.zazacraft;
 
-import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.util.thread.SidedThreadGroups;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.slf4j.Logger;
-import net.minecraft.network.FriendlyByteBuf;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
+import net.minecraftforge.network.simple.SimpleChannel;
+import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.util.thread.SidedThreadGroups;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.MinecraftForge;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.FriendlyByteBuf;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -34,52 +34,33 @@ import java.util.function.Function;
 import java.util.function.BiConsumer;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import com.macrokebab.zazacraft.init.ModItems;
-import static com.macrokebab.zazacraft.init.ModBlockEntities.BLOCK_ENTITY_TYPES;
-import static com.macrokebab.zazacraft.init.ModBlocks.BLOCKS;
-import static com.macrokebab.zazacraft.init.ModItems.ITEMS;
-import static com.macrokebab.zazacraft.init.ModCreativeModeTabs.CREATIVE_MODE_TABS;
-import static com.macrokebab.zazacraft.init.ModMenus.MENU_TYPES;
-import static com.macrokebab.zazacraft.init.ModMobEffects.MOB_EFFECTS;
+
+import com.macrokebab.zazacraft.init.*;
+import static com.macrokebab.zazacraft.init.ModEntities.REGISTRY;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ZazacraftMod.MODID)
 public class ZazacraftMod {
-
-
-    // Define mod id in a common place for everything to reference
+    public static final Logger LOGGER = LogManager.getLogger(ZazacraftMod.class);
     public static final String MODID = "zazacraft";
-    // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public ZazacraftMod() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        // Start of user code block mod constructor
+        // End of user code block mod constructor
+        MinecraftForge.EVENT_BUS.register(this);
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
-        CREATIVE_MODE_TABS.register(modEventBus);
+        ModBlocks.REGISTRY.register(bus);
+        ModBlockEntities.REGISTRY.register(bus);
+        ModItems.REGISTRY.register(bus);
+        ModEntities.REGISTRY.register(bus);
+        ModMobEffects.REGISTRY.register(bus);
+        ModCreativeModeTabs.REGISTRY.register(bus);
 
-        MOB_EFFECTS.register(modEventBus);
+        //ModVillagerProfessions.PROFESSIONS.register(bus);
+        ModMenus.REGISTRY.register(bus);
 
-        MENU_TYPES.register(modEventBus);
-
-        BLOCK_ENTITY_TYPES.register(modEventBus);
-
-
-
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
-
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-
-        MinecraftForge.EVENT_BUS.register(com.macrokebab.zazacraft.client.ClientModEvents.class);
 
     }
 

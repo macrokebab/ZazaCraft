@@ -13,24 +13,26 @@ import net.minecraftforge.registries.RegistryObject;
 import static com.macrokebab.zazacraft.ZazacraftMod.MODID;
 
 public class ModBlocks {
-    // Create a Deferred Register to hold Blocks which will all be registered under the "zazacraft" namespace
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
+    // Create a Deferred Register to hold BLOCKS which will all be registered under the "zazacraft" namespace
+    public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
 
     // Registro de bloques
-    public static final RegistryObject<Block> TOBANIA_CULTIVO = BLOCKS.register("tobania_cultivo",
+    public static final RegistryObject<Block> TOBANIA_CULTIVO = REGISTRY.register("tobania_cultivo",
             () -> new TobaniaCrop(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
-    public static final RegistryObject<Block> ZAZA_CULTIVO = BLOCKS.register("zaza_cultivo",
+    public static final RegistryObject<Block> ZAZA_CULTIVO = REGISTRY.register("zaza_cultivo",
             () -> new ZazaCrop(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
-    public static final RegistryObject<Block> WILD_TOBANIA = BLOCKS.register("tobania_wild", () -> new WildTobania());
+    public static final RegistryObject<Block> WILD_TOBANIA = REGISTRY.register("tobania_wild", () -> new WildTobania());
 
-    public static final RegistryObject<Block> WILD_ZAZA = BLOCKS.register("zaza_wild", () -> new WildZaza());
+    public static final RegistryObject<Block> WILD_ZAZA = REGISTRY.register("zaza_wild", () -> new WildZaza());
 
-    public static final RegistryObject<Block> BONG = BLOCKS.register("bong", BongBlock::new);
+    public static final RegistryObject<Block> BONG = REGISTRY.register("bong", () -> new BongBlock());
 
-    public static final RegistryObject<Block> DESTRUCTOR = BLOCKS.register("destructor", () -> new DestructorBlock());
+    public static final RegistryObject<Block> DESTRUCTOR = REGISTRY.register("destructor", () -> new DestructorBlock());
 
-    public static final RegistryObject<Block> BANDEJA = BLOCKS.register("bandeja", BandejaBlock::new);
+    public static final RegistryObject<Block> DESTRUCTOR_MAGICO = REGISTRY.register("destructor_magico", () -> new DestructormagicoBlock());
+
+    public static final RegistryObject<Block> BANDEJA = REGISTRY.register("bandeja", () -> new BandejaBlock());
 
 }

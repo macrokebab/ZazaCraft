@@ -5,6 +5,7 @@
   "gui.zazacraft.rinoneragui.r4": "",
   "gui.zazacraft.destructor_gui.label_10s": "5s",
   "block.zazacraft.destructor": "Destructor",
+  "block.zazacraft.destructor_magico": "Destructor mágico",
   "block.zazacraft.bandeja": "Bandeja",
   "block.zazacraft.bong": "Bong",
   "advancements.craftbong.title": "Alto calibre",
@@ -28,6 +29,8 @@
   "item.zazacraft.sostenedor": "Cartón",
   "block.zazacraft.tobania_wild": "Tobania silvestre",
   "item.zazacraft.varita_canaria": "Varita del Sol",
+  "item.zazacraft.pastel": "Pastel",
+  "item.zazacraft.zaza_trigo": "Trigo azazarado",
   "item.zazacraft.varita_magica": "Varita Mágica",
   "item_group.zazacraft.zazatab": "ZazaCraft",
   "item.zazacraft.zaza_dstr": "Zaza destruida",
@@ -37,5 +40,7 @@
   "entity.minecraft.villager.zazacraft.magovillager": "Mago",
   "gui.zazacraft.destructor_gui.button_destruir": "Destruir",
   "advancements.fished_destructor.title": "Ufff referencia",
-  "advancements.fished_destructor.descr": "wazaaa"
+  "advancements.fished_destructor.descr": "wazaaa",
+  "item.zazacraft.poli_spwn_egg": "Generar poli",
+  "entity.zazacraft.poli": "Poli"
 }
