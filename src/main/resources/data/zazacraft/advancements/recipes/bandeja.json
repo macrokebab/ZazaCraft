@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "has_paper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:gold_nugget"
+          }
+        ]
+      }
+    },
+    "has_slime_ball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "zazacraft:zaza_hoja"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "zazacraft:bandeja"
+    ]
+  }
+}

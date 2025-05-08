@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "has_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "zazacraft:polvo_zaza"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "zazacraft:elixir_zaza"
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "zazacraft:elixir_zaza"
+    ]
+  }
+}

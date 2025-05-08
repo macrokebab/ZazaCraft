@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "has_papelote_recipe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "recipe": "zazacraft:papelote"
+      }
+    },
+    "has_zaza_polvo_recipe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "recipe": "zazacraft:zaza_polvo"
+      }
+    },
+    "has_sostenedor_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "zazacraft:sostenedor"
+      }
+    },
+    "has_tobania_hoja": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "zazacraft:tobania_hoja"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "zazacraft:porro"
+    ]
+  }
+}

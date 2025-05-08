@@ -1,0 +1,37 @@
+{
+  "parent": "zazacraft:category",
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "zazacraft:varita_magica"
+    },
+    "title": {
+      "translate": "advancements.craftvarita.title"
+    },
+    "description": {
+      "translate": "advancements.craftvarita.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "craftvarita_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zazacraft:varita_magica"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

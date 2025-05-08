@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "all": "zazacraft:block/bandeja",
+    "particle": "zazacraft:block/bandeja"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 2],
+      "to": [12, 2, 14],
+      "faces": {
+        "north": { "texture": "#all" },
+        "south": { "texture": "#all" },
+        "east": { "texture": "#all" },
+        "west": { "texture": "#all" },
+        "up": { "texture": "#all" },
+        "down": { "texture": "#all" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "zazacraft:zaza_polvo"
+    }
+  },
+  "result": {
+    "item": "zazacraft:zaza_roca",
+    "count": 1
+  }
+}

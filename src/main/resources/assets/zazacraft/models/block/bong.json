@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "bong_ns": "zazacraft:block/bong_ns",
+    "bong_e": "zazacraft:block/bong_e",
+    "bong_w": "zazacraft:block/bong_w",
+    "bong_u": "zazacraft:block/bong_u",
+    "bong_d": "zazacraft:block/bong_d",
+    "particle": "zazacraft:block/bong_ns"
+  },
+  "elements": [
+    {
+      "from": [5, 0, 5],
+      "to": [11, 10, 11],
+      "faces": {
+        "north": { "texture": "#bong_ns" },
+        "south": { "texture": "#bong_ns" },
+        "east": { "texture": "#bong_e" },
+        "west": { "texture": "#bong_w" },
+        "up": { "texture": "#bong_u" },
+        "down": { "texture": "#bong_d" }
+      }
+    }
+  ]
+}
