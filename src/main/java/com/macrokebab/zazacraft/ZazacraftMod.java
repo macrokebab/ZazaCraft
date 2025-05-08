@@ -103,12 +103,11 @@ public class ZazacraftMod {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("ZazaCraft enrolao");
     }
 
     @SubscribeEvent
     public void tick(ServerTickEvent.Post event) {
-        LOGGER.info("Tick del servidor procesado");
         List<Tuple<Runnable, Integer>> actions = new ArrayList<>();
         workQueue.forEach(work -> {
             work.setB(work.getB() - 1);

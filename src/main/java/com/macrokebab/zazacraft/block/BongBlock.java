@@ -20,7 +20,13 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BongBlock extends Block {
     public BongBlock() {
-        super(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+        super(BlockBehaviour
+                .Properties.of()
+                .sound(SoundType.GLASS)
+                .strength(1f, 10f)
+                .noOcclusion()
+                .noCollission()
+                .isRedstoneConductor((bs, br, bp) -> false));
     }
 
     @Override

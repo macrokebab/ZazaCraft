@@ -28,8 +28,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class DestructorBlock extends Block implements EntityBlock {
     public DestructorBlock() {
-        super(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(0f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+        super(BlockBehaviour
+                .Properties.of()
+                .sound(SoundType.LANTERN)
+                .strength(0f, 10f)
+                .noCollission()
+                .noOcclusion()
+                .isRedstoneConductor((bs, br, bp) -> false));
     }
+
+
 
     @Override
     public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {

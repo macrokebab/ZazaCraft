@@ -21,7 +21,15 @@ import net.minecraft.world.phys.HitResult;
 
 public class ZazaCrop extends CropBlock {
     public ZazaCrop() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+        super(BlockBehaviour
+                .Properties.of()
+                .mapColor(MapColor.PLANT)
+                .randomTicks()
+                .sound(SoundType.GRASS)
+                .instabreak()
+                .noCollission()
+                .offsetType(BlockBehaviour.OffsetType.XZ)
+                .pushReaction(PushReaction.DESTROY));
     }
 
     @Override

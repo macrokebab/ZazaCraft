@@ -14,6 +14,7 @@
   "effect.zazacraft.zazaefecto": "DJ SMOKEY",
   "item.zazacraft.elixir_zaza": "Elixir of zaza",
   "item.zazacraft.tobania_hoja": "Tobania leaves",
+  "item.zazacraft.zaza_tobania": "Dusty tobania",
   "item.zazacraft.zaza_hoja": "Zaza leaves",
   "advancements.craftvarita.descr": "Materialize the magic wand",
   "advancements.craftvarita.title": "Ninja of the zaza",
@@ -28,7 +29,7 @@
   "block.zazacraft.zaza_cultivo": "Zaza seeds",
   "item.zazacraft.sostenedor": "Blunt holder",
   "block.zazacraft.tobania_wild": "Wild Tobania",
-  "item.zazacraft.varita_canaria": "Sun Wand",
+  "item.zazacraft.varita_canaria": "Magic volcanic wand",
   "item.zazacraft.varita_magica": "Magic wand",
   "item_group.zazacraft.zazatab": "ZazaCraft",
   "item.zazacraft.zaza_dstr": "Destroyed zaza",
@@ -41,5 +42,5 @@
   "advancements.fished_destructor.descr": "wazaaa",
   "item.zazacraft.pastel": "Magic Brownie",
   "item.zazacraft.zaza_trigo": "Magic wheat",
-  "item.zazacraft.poli_spwn_egg": "Poli Spawn Egg"
+  "itemGroup.zazacraft": "ZazaCraft"
 }
