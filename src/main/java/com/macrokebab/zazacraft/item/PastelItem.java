@@ -1,8 +1,8 @@
 package com.macrokebab.zazacraft.item;
 
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 
 public class PastelItem extends Item {
     public PastelItem() {

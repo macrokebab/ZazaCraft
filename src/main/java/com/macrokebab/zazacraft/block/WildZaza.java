@@ -1,9 +1,9 @@
 package com.macrokebab.zazacraft.block;
 
 import com.macrokebab.zazacraft.init.ModBlocks;
-import com.macrokebab.zazacraft.init.ModMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -16,7 +16,7 @@ import net.minecraft.world.phys.HitResult;
 
 public class WildZaza extends FlowerBlock {
     public WildZaza() {
-        super(() -> ModMobEffects.ZAZAEFECTO.get(), 100, Properties.of().mapColor(MapColor.PLANT).sound(SoundType.GRASS).instabreak().noCollission().offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+        super(() -> MobEffects.SLOW_FALLING, 100, Properties.of().mapColor(MapColor.PLANT).sound(SoundType.GRASS).instabreak().noCollission().offsetType(OffsetType.XZ).pushReaction(PushReaction.DESTROY));
     }
 
     @Override

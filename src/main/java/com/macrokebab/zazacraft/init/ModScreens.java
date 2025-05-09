@@ -1,13 +1,12 @@
 package com.macrokebab.zazacraft.init;
 
-import com.macrokebab.zazacraft.client.gui.*;
-
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.api.distmarker.Dist;
-
+import com.macrokebab.zazacraft.client.gui.DestructorguiScreen;
+import com.macrokebab.zazacraft.client.gui.RinoneraguiScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModScreens {

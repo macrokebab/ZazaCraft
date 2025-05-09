@@ -1,17 +1,13 @@
 package com.macrokebab.zazacraft.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.common.ForgeSpawnEggItem;
-
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.BlockItem;
-
 import com.macrokebab.zazacraft.item.*;
-import com.macrokebab.zazacraft.ZazacraftMod;
-
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import static com.macrokebab.zazacraft.ZazacraftMod.MODID;
 
@@ -80,8 +76,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> BANDEJA = REGISTRY.register("bandeja",
             () -> new BlockItem(ModBlocks.BANDEJA.get(), new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> POLI_SPAWN_EGG = REGISTRY.register("poli_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.POLI, -1, -16777063, new Item.Properties()));
 
     public static final RegistryObject<Item> ZAZATRIGO = REGISTRY.register("zazatrigo", () -> new ZazatrigoItem());
 

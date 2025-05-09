@@ -1,14 +1,12 @@
 package com.macrokebab.zazacraft.init;
 
 import com.macrokebab.zazacraft.block.entity.BongBlockEntity;
+import com.macrokebab.zazacraft.block.entity.DestructorBlockEntity;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import net.minecraft.world.level.block.Block;
-
-import com.macrokebab.zazacraft.block.entity.DestructorBlockEntity;
 
 
 public class ModBlockEntities {

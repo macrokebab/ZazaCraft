@@ -1,7 +1,7 @@
 package com.macrokebab.zazacraft.item;
 
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 
 public class ZazatrigoItem extends Item {
     public ZazatrigoItem() {

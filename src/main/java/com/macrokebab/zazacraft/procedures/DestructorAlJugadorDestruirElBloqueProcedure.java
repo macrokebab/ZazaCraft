@@ -1,8 +1,7 @@
 package com.macrokebab.zazacraft.procedures;
 
-import net.minecraft.world.entity.Entity;
-
 import com.macrokebab.zazacraft.network.ModVariables;
+import net.minecraft.world.entity.Entity;
 
 public class DestructorAlJugadorDestruirElBloqueProcedure {
     public static void execute(Entity entity) {

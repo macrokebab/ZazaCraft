@@ -1,18 +1,17 @@
 package com.macrokebab.zazacraft.procedures;
 
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.core.BlockPos;
-
-import java.util.function.Supplier;
-import java.util.Map;
-
-import com.macrokebab.zazacraft.network.ModVariables;
 import com.macrokebab.zazacraft.init.ModItems;
+import com.macrokebab.zazacraft.network.ModVariables;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+
+import java.util.Map;
+import java.util.function.Supplier;
 
 public class DestructorprocesoProcedure {
     public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
